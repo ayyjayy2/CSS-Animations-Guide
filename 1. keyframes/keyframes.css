@@ -1,0 +1,55 @@
+#Lesson1
+/* Structure
+    NAME - the name we give to our animation 
+    You can have 1 or many keyframes 
+*/
+
+{ @keyframes [NAME]{
+        [ KEYFRAME SELECTOR ] { CSS STYLES }
+    }
+}
+
+/* #spin-360-degrees (from 0 to 360 degrees)*/
+
+/* method 1 */
+@keyframes spin1 {
+    from {
+        transform: rotate(0deg);
+    } 
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* method 2 */
+@keyframes spin2 {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* make our element disappear 50% through the animation */
+@keyframes vanish {
+    50% {
+      opacity: 0;
+    }
+  }
+
+/* 
+    Apply the animation to our element 
+    transition-timing-function(easing) default is 'ease' - start and end slowly but speed up in middle
+*/
+.elephant {
+    animation-duration: 5s;
+    animation-name: spin2, vanish;
+    transition-timing-function: linear;
+
+    max-width: 30%;
+    max-height: 30%;
+
+    margin-left: 35%;
+    margin-top: 20px;
+}
+
+
+
